@@ -32,21 +32,21 @@ a {
 
 /* Headings --------------------------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   img {
     margin: 0;
   }
 }
 
-h1 { 
+h1 {
   @include adjust-font-size-to(48px);
   @include trailer(1,48px);
 }
 
-h2 { 
+h2 {
   @include adjust-font-size-to(32px);
-  @include trailer(1,32px);  
+  @include trailer(1,32px);
 }
 
 h3 {
@@ -59,26 +59,26 @@ h4 {
   @include trailer(1,18px);
 }
 
-h5, h6 { 
+h5, h6 {
   @include trailer(1);
   font-weight: bold;
 }
 
 /* Text --------------------------------------------------------------*/
 
-cite, em, dfn { 
+cite, em, dfn {
   font-style: italic;
 }
 
-strong, dfn { 
+strong, dfn {
   font-weight: bold;
 }
 
-sup, sub { 
+sup, sub {
   line-height: 0;
 }
 
-abbr, acronym { 
+abbr, acronym {
   border-bottom: 1px dotted;
   cursor: help;
 }
@@ -88,11 +88,11 @@ address {
   font-style: italic;
 }
 
-ins { 
+ins {
   text-decoration: underline;
 }
 
-del { 
+del {
   text-decoration: line-through;
 }
 
@@ -105,11 +105,11 @@ pre, code, tt {
   @include monospace-family;
 }
 
-pre { 
+pre {
   white-space: pre;
 }
 
-code { 
+code {
   display: block;
 }
 
@@ -117,7 +117,7 @@ q {
   font-style: italic;
   em {
     font-style: normal;
-  } 
+  }
 }
 
 p {
@@ -128,7 +128,7 @@ blockquote, q {
   quotes : "" "";
 }
 
-blockquote { 
+blockquote {
   margin: $base-rhythm-unit {
     left: -$base-rhythm-unit;
   };
@@ -139,7 +139,7 @@ blockquote {
 }
 
 blockquote, q {
-  &:before, &:after { 
+  &:before, &:after {
     content: "";
   }
 }
@@ -158,7 +158,7 @@ img {
     list-style: decimal;
   } @else {
     list-style: disc;
-  } 
+  }
 }
 
 @mixin no-style-list {
@@ -176,7 +176,7 @@ ul {
 }
 
 li {
-  ul, ol { 
+  ul, ol {
     list-style-type: circle;
     margin: 0 $base-rhythm-unit $base-rhythm-unit*.5;
   }
@@ -206,7 +206,7 @@ table {
   border-spacing: 0;
 }
 
-table, td, th { 
+table, td, th {
   vertical-align: top;
 }
 
@@ -224,7 +224,7 @@ th, td {
   @include trailing-border(1px,.5);
 }
 
-tfoot { 
+tfoot {
   @include adjust-font-size-to(14px);
 }
 
