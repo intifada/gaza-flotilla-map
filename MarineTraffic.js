@@ -133,7 +133,8 @@ OpenLayers.Format.MarineTraffic = OpenLayers.Class(OpenLayers.Format.XML, {
         for (var i = 0, len = points.length; i < len; i++) {
             point_features.push(new OpenLayers.Geometry.Point(points[i].getAttribute("LON"), points[i].getAttribute("LAT")));
         }
-        return new OpenLayers.Geometry.LineString(point_features);
+        point_features.push(new OpenLayers.Geometry.LineString(point_features));
+        return new OpenLayers.Geometry.Collection(point_features);
     },
 
     /**
