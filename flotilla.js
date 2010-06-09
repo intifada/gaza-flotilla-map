@@ -21,6 +21,17 @@ function init() {
   layer = new OpenLayers.Layer.MarineTraffic( "Mavi Marmara", "data/D6FU2-20100531.xml");
   map.addLayer(layer);
 
+  layer = new OpenLayers.Layer.MarineTraffic( "Eleftheri Mesogeios A", "data/SW6923-20100531a.xml");
+  map.addLayer(layer);
+  layer = new OpenLayers.Layer.MarineTraffic( "Eleftheri Mesogeios B", "data/SW6923-20100531.xml");
+  map.addLayer(layer);
+
+  layer = new OpenLayers.Layer.MarineTraffic( "Defne Y A", "data/T3SX-20100531a.xml");
+  map.addLayer(layer);
+  layer = new OpenLayers.Layer.MarineTraffic( "Defne Y B", "data/T3SX-20100531.xml");
+  map.addLayer(layer);
+
+
   map.setCenter(new OpenLayers.LonLat(0, 0), 0);
   map.addControl(new OpenLayers.Control.LayerSwitcher());
 };
