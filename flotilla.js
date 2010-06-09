@@ -1,6 +1,20 @@
 function init() {
   var map, layer;
-  map = new OpenLayers.Map('map');
+  map = new OpenLayers.Map('map', {
+    controls: [
+      new OpenLayers.Control.Graticule({
+        numPoints: 2,
+        labelled: true,
+        visible: true
+      }),
+      new OpenLayers.Control.LayerSwitcher(),
+      new OpenLayers.Control.PanZoomBar(),
+      new OpenLayers.Control.Navigation(),
+      new OpenLayers.Control.Scale(),
+      new OpenLayers.Control.ZoomBox()
+    ]
+  });
+
 
   layer = new OpenLayers.Layer.WMS( "OpenLayers WMS", "http://labs.metacarta.com/wms/vmap0?", {layers: 'basic'});
   map.addLayer(layer);
