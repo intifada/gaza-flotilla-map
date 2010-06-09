@@ -407,8 +407,11 @@ html, body {
 
 /* line 40, ../src/screen.scss */
 h1 {
+  font-size: 4.5em;
+  line-height: 1em;
   margin: 0;
   font-weight: bold;
   background-color: black;
   color: white;
+  text-transform: uppercase;
 }

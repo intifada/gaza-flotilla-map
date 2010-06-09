@@ -38,8 +38,10 @@ html,body {
 }
 
 h1 {
+  @include adjust-font-size-to(72px);
   margin: 0;
   font-weight: bold;
   background-color: black;
   color: white;
+  text-transform: uppercase;
 }
