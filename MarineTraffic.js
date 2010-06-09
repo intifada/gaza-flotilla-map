@@ -177,8 +177,9 @@ OpenLayers.Format.MarineTraffic = OpenLayers.Class(OpenLayers.Format.XML, {
 
 
 /**
- * @requires OpenLayers/Layer/Markers.js
+ * @requires OpenLayers/Layer/Vector.js
  * @requires OpenLayers/Request/XMLHttpRequest.js
+ * @requires OpenLayers/Console.js
  */
 
 /**
@@ -186,10 +187,9 @@ OpenLayers.Format.MarineTraffic = OpenLayers.Class(OpenLayers.Format.XML, {
  * Add MarineTraffic Point features to your map.
  *
  * Inherits from:
- *  - <OpenLayers.Layer.Markers>
- *  - <OpenLayers.Layer>
+ *  - <OpenLayers.Layer.Vector>
  */
-OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Markers, {
+OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Vector, {
 
     /**
      * Property: location
@@ -246,7 +246,9 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Markers, {
     * options - {Object}
     */
     initialize: function(name, location, options) {
-        OpenLayers.Layer.Markers.prototype.initialize.apply(this, [name, options]);
+        var newArguments = [];
+        newArguments.push(name, options);
+        OpenLayers.Layer.Vector.prototype.initialize.apply(this, newArguments);
         this.location = location;
         this.features = [];
     },
@@ -255,12 +257,12 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Markers, {
      * Method: destroy
      */
     destroy: function() {
-        // Warning: Layer.Markers.destroy() must be called prior to calling
+        // Warning: Layer.Vector.destroy() must be called prior to calling
         // clearFeatures() here, otherwise we leak memory. Indeed, if
-        // Layer.Markers.destroy() is called after clearFeatures(), it won't be
+        // Layer.Vector.destroy() is called after clearFeatures(), it won't be
         // able to remove the marker image elements from the layer's div since
-        // the markers will have been destroyed by clearFeatures().
-        OpenLayers.Layer.Markers.prototype.destroy.apply(this, arguments);
+        // the vectors will have been destroyed by clearFeatures().
+        OpenLayers.Layer.Vector.prototype.destroy.apply(this, arguments);
         this.clearFeatures();
         this.features = null;
     },
@@ -292,7 +294,7 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Markers, {
      * minor - {Object}
      */
     moveTo:function(bounds, zoomChanged, minor) {
-        OpenLayers.Layer.Markers.prototype.moveTo.apply(this, arguments);
+        OpenLayers.Layer.Vector.prototype.moveTo.apply(this, arguments);
         if(this.visibility && !this.loaded){
             this.loadRSS();
         }
@@ -332,51 +334,7 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Markers, {
             if (!feature.geometry) {
                 continue;
             }
-
-            var title = feature.attributes.title ?
-                         feature.attributes.title : "Untitled";
-
-            var description = feature.attributes.description ?
-                         feature.attributes.description : "No description.";
-
-            var link = feature.attributes.link ? feature.attributes.link : "";
-
-            var location = feature.geometry.getBounds().getCenterLonLat();
-
-
-            data.icon = this.icon == null ?
-                                     OpenLayers.Marker.defaultIcon() :
-                                     this.icon.clone();
-
-            data.popupSize = this.popupSize ?
-                             this.popupSize.clone() :
-                             new OpenLayers.Size(250, 120);
-
-            if (title || description) {
-                // we have supplemental data, store them.
-                data.title = title;
-                data.description = description;
-
-                var contentHTML = '<div class="olLayerGeoRSSClose">[x]</div>';
-                contentHTML += '<div class="olLayerGeoRSSTitle">';
-                if (link) {
-                    contentHTML += '<a class="link" href="'+link+'" target="_blank">';
-                }
-                contentHTML += title;
-                if (link) {
-                    contentHTML += '</a>';
-                }
-                contentHTML += '</div>';
-                contentHTML += '<div style="" class="olLayerGeoRSSDescription">';
-                contentHTML += description;
-                contentHTML += '</div>';
-                data['popupContentHTML'] = contentHTML;
-            }
-            var feature = new OpenLayers.Feature(this, location, data);
-            this.features.push(feature);
-            var marker = feature.createMarker();
-            marker.events.register('click', feature, this.markerClick);
-            this.addMarker(marker);
+            this.addFeatures(feature);
         }
         this.events.triggerEvent("loadend");
     },
