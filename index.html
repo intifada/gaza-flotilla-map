@@ -1,28 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <link rel="stylesheet" href="OpenLayers-2.9.1/theme/default/style.css" type="text/css" />
-    <script src="OpenLayers-2.9.1/lib/OpenLayers.js"></script>
-    <script src="MarineTraffic.js"></script>
-    <script type="text/javascript">
-        var lon = 5;
-        var lat = 40;
-        var zoom = 5;
-        var map, layer;
-
-        function init(){
-            map = new OpenLayers.Map('map');
-            layer = new OpenLayers.Layer.OSM("OSM");
-            map.addLayer(layer);
-            map.setCenter(new OpenLayers.LonLat(0, 0), 0);
-            map.addControl(new OpenLayers.Control.LayerSwitcher());
-            layer = new OpenLayers.Layer.MarineTraffic( "Mavi Marmara", "D6FU2-20100531.xml");
-            map.addLayer(layer);
-            layerextent = layer.getDataExtent();
-            map.zoomToExtent(layerextent);
-        }
-    </script>
-  </head>
-  <body onload="init()">
-    <div id="map"></div>
-  </body>
+<head>
+  <title>Flotilla</title>
+  <link rel="stylesheet" href="OpenLayers-2.9.1/theme/default/style.css" type="text/css" />
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="OpenLayers-2.9.1/lib/OpenLayers.js" type="text/javascript"></script>
+  <script src="MarineTraffic.js" type="text/javascript"></script>
+  <script src="flotilla.js" type="text/javascript"></script>
+</head>
+<body onload="init();">
+<div id="map">
+</div>
+</body>
 </html>
