@@ -13,7 +13,9 @@
 // change '#page' to match your HTML container element(s)
 #page {
   @include container;
-  @include show-grid("grid.png"); }
+  @include box-shadow(rgba(0, 0, 0, 0.8), 0, 0);
+  background-color: white;
+}
 
 // show-grid loads a 64+16x24 grid image by default
 // For other grid settings, run `compass grid-img 30+10x20`
@@ -22,8 +24,22 @@
 
 /* Styles --------------------------------------------------------------*/
 
-#map {
-  position: absolute;
+html,body,#page {
   height: 100%;
-  width: 100%;
+}
+
+html,body {
+  background-color: #ff00ab;
+}
+
+#map {
+  @include full;
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-weight: bold;
+  background-color: black;
+  color: white;
 }

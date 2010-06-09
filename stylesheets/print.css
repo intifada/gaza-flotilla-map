@@ -71,7 +71,7 @@ section, article, aside, header, footer, nav, dialog, figure {
 /* Body --------------------------------------------------------------*/
 /* line 13, ../src/_defaults.scss */
 body {
-  font-family: 'Adobe Caslon Pro', Caslon, Baskerville, Palatino, 'Palatino Linotype', "Hoefler Text", Garamond, "URW Palladio L", "Book Antiqua", Georgia, serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #4c4c4c;
 }
 

@@ -71,7 +71,7 @@ section, article, aside, header, footer, nav, dialog, figure {
 /* Body --------------------------------------------------------------*/
 /* line 13, ../src/_defaults.scss */
 body {
-  font-family: 'Adobe Caslon Pro', Caslon, Baskerville, Palatino, 'Palatino Linotype', "Hoefler Text", Garamond, "URW Palladio L", "Book Antiqua", Georgia, serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #4c4c4c;
 }
 
@@ -375,9 +375,11 @@ body {
   margin-right: auto;
   width: 61em;
   max-width: 100%;
-  background-image: url('/images/grid.png?1276061462');
-  background-repeat: repeat;
-  background-position: 1em 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+  background-color: white;
 }
 /* line 8, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 #page {
@@ -385,9 +387,28 @@ body {
 }
 
 /* Styles --------------------------------------------------------------*/
-/* line 25, ../src/screen.scss */
-#map {
-  position: absolute;
+/* line 27, ../src/screen.scss */
+html, body, #page {
   height: 100%;
-  width: 100%;
+}
+
+/* line 31, ../src/screen.scss */
+html, body {
+  background-color: #ff00ab;
+}
+
+/* line 35, ../src/screen.scss */
+#map {
+  clear: both;
+  margin-right: 1.639%;
+  margin-left: 1.639%;
+  height: 100%;
+}
+
+/* line 40, ../src/screen.scss */
+h1 {
+  margin: 0;
+  font-weight: bold;
+  background-color: black;
+  color: white;
 }
