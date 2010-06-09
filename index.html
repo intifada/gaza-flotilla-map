@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="OpenLayers-2.9.1/theme/default/style.css" type="text/css" />
+    <script src="OpenLayers-2.9.1/lib/OpenLayers.js"></script>
+    <script src="MarineTraffic.js"></script>
+    <script type="text/javascript">
+        var lon = 5;
+        var lat = 40;
+        var zoom = 5;
+        var map, layer;
+
+        function init(){
+            map = new OpenLayers.Map('map');
+            layer = new OpenLayers.Layer.OSM("OSM");
+            map.addLayer(layer);
+            map.setCenter(new OpenLayers.LonLat(0, 0), 0);
+            map.addControl(new OpenLayers.Control.LayerSwitcher());
+            layer = new OpenLayers.Layer.MarineTraffic( "Mavi Marmara", "D6FU2-20100531.xml");
+            map.addLayer(layer);
+            layerextent = layer.getDataExtent();
+            map.zoomToExtent(layerextent);
+        }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="map"></div>
+  </body>
+</html>
