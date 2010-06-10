@@ -12,9 +12,7 @@
 
 // change '#page' to match your HTML container element(s)
 #page {
-  @include container;
-  @include box-shadow(rgba(0, 0, 0, 0.8), 0, 0);
-  background-color: white;
+  text-align: left;
 }
 
 // show-grid loads a 64+16x24 grid image by default
@@ -24,24 +22,23 @@
 
 /* Styles --------------------------------------------------------------*/
 
-html,body,#page {
-  height: 100%;
+html,body {
+  background-color: #ccc;
 }
 
-html,body {
-  background-color: #ff00ab;
+#page {
 }
 
 #map {
-  @include full;
-  height: 100%;
+  @include box-shadow(rgba(0, 0, 0, 0.8), 0, 0);
+  position: fixed;
+  width: 100%;
+  top: 72px;
+  bottom: 72px;
 }
 
 h1 {
   @include adjust-font-size-to(72px);
   margin: 0;
   font-weight: bold;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
 }

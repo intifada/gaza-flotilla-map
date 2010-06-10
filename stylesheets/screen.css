@@ -368,41 +368,25 @@ body {
 
 /* line 14, ../src/screen.scss */
 #page {
-  overflow: hidden;
-  display: inline-block;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  width: 61em;
-  max-width: 100%;
+}
+
+/* Styles --------------------------------------------------------------*/
+/* line 25, ../src/screen.scss */
+html, body {
+  background-color: #ccc;
+}
+
+/* line 32, ../src/screen.scss */
+#map {
   -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
   -o-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
-  background-color: white;
-}
-/* line 8, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#page {
-  display: block;
-}
-
-/* Styles --------------------------------------------------------------*/
-/* line 27, ../src/screen.scss */
-html, body, #page {
-  height: 100%;
-}
-
-/* line 31, ../src/screen.scss */
-html, body {
-  background-color: #ff00ab;
-}
-
-/* line 35, ../src/screen.scss */
-#map {
-  clear: both;
-  margin-right: 1.639%;
-  margin-left: 1.639%;
-  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 72px;
+  bottom: 72px;
 }
 
 /* line 40, ../src/screen.scss */
@@ -411,7 +395,4 @@ h1 {
   line-height: 1em;
   margin: 0;
   font-weight: bold;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
 }
