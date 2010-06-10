@@ -1,5 +1,13 @@
 function init() {
-  var map, layers, selectControl, onFeatureSelect, onFeatureUnselect, selectedFeature;
+  var map,
+    layers,
+    selectControl,
+    onFeatureSelect,
+    onFeatureUnselect,
+    selectedFeature,
+    handleMeasurements,
+    toggleControl,
+    measureControls;
 
   map = new OpenLayers.Map('map', {
     controls: [
@@ -44,6 +52,66 @@ function init() {
       feature.popup = null;
   };
 
+            // style the sketch fancy
+            var sketchSymbolizers = {
+                "Point": {
+                    pointRadius: 4,
+                    graphicName: "square",
+                    fillColor: "white",
+                    fillOpacity: 1,
+                    strokeWidth: 1,
+                    strokeOpacity: 1,
+                    strokeColor: "#333333"
+                },
+                "Line": {
+                    strokeWidth: 3,
+                    strokeOpacity: 1,
+                    strokeColor: "#666666",
+                    strokeDashstyle: "dash"
+                },
+                "Polygon": {
+                    strokeWidth: 2,
+                    strokeOpacity: 1,
+                    strokeColor: "#666666",
+                    fillColor: "white",
+                    fillOpacity: 0.3
+                }
+            };
+            var style = new OpenLayers.Style();
+            style.addRules([
+                new OpenLayers.Rule({symbolizer: sketchSymbolizers})
+            ]);
+            var styleMap = new OpenLayers.StyleMap({"default": style});
+
+  handleMeasurements = function (event) {
+      var geometry = event.geometry;
+      var units = event.units;
+      var order = event.order;
+      var measure = event.measure;
+      var element = document.getElementById('output');
+      var out = "";
+      if(order == 1) {
+          out += "measure: " + measure.toFixed(3) + " " + units;
+      } else {
+          out += "measure: " + measure.toFixed(3) + " " + units + "<sup>2</" + "sup>";
+      }
+      element.innerHTML = out;
+  };
+
+  measureControl = new OpenLayers.Control.Measure(
+      OpenLayers.Handler.Path, {
+          persist: true,
+          handlerOptions: {
+              layerOptions: {styleMap: styleMap}
+          }
+      }
+  );
+
+  measureControl.events.on({
+      "measure": handleMeasurements,
+      "measurepartial": handleMeasurements
+  });
+  map.addControl(measureControl);
 
   map.addLayer(new OpenLayers.Layer.WMS(
       "OpenLayers WMS", "http://labs.metacarta.com/wms/vmap0?",
@@ -91,4 +159,13 @@ function init() {
 
   map.setCenter(new OpenLayers.LonLat(34, 32), 0);
   map.zoomTo(9);
+
+  document.getElementById('noneToggle').checked = true;
+  document.getElementById('noneToggle').onclick = function () {
+    measureControl.deactivate();
+  };
+  document.getElementById('lineToggle').onclick = function () {
+    measureControl.activate();
+  };
+
 }
