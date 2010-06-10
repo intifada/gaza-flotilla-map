@@ -26,8 +26,8 @@ function init() {
       var html = '';
       selectedFeature = feature;
       html += 'Timestamp: ' + feature.data.timestamp + '<br />';
-      html += 'Speed: ' +  feature.data.speed + '<br />';
-      html += 'Course: ' + feature.data.course;
+      html += 'Speed: ' +  (parseInt(feature.data.speed, 10)) / 10 + ' knots<br />';
+      html += 'Course: ' + feature.data.course + '&deg;';
 
       popup = new OpenLayers.Popup.FramedCloud("position",
          feature.geometry.getBounds().getCenterLonLat(),
