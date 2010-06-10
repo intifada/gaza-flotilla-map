@@ -12,7 +12,8 @@ function init() {
       new OpenLayers.Control.PanZoomBar(),
       new OpenLayers.Control.Navigation(),
       new OpenLayers.Control.Scale(),
-      new OpenLayers.Control.ZoomBox()
+      new OpenLayers.Control.ZoomBox(),
+      new OpenLayers.Control.MousePosition()
     ]
   });
   layers = [];
