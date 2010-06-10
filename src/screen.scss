@@ -51,3 +51,19 @@ h1 {
   }
 }
 
+dl#legend {
+  @include reset-box-model;
+  position: absolute;
+  bottom: 0;
+  width: 20em;
+  margin-left: 1em;
+  dt,dd {
+    @include reset-box-model;
+  }
+  dt {
+    width: 5em;
+    @include float-left;
+    margin-right: 1em;
+    text-indent: -9999px;
+  }
+}

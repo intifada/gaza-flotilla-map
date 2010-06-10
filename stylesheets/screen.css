@@ -406,3 +406,30 @@ h1 img {
   margin-left: 1ex;
   margin-right: 1ex;
 }
+
+/* line 46, ../src/screen.scss */
+dl#legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  bottom: 0;
+  width: 20em;
+  margin-left: 1em;
+}
+/* line 52, ../src/screen.scss */
+dl#legend dt, dl#legend dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+/* line 55, ../src/screen.scss */
+dl#legend dt {
+  width: 5em;
+  display: inline;
+  float: left;
+  margin-right: 1em;
+  text-indent: -9999px;
+}
