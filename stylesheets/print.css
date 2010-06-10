@@ -341,7 +341,7 @@ label {
 }
 
 /* line 252, ../src/_defaults.scss */
-textarea, input:not([type="radio"]) {
+textarea {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
