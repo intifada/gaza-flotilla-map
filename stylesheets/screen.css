@@ -385,14 +385,24 @@ html, body {
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
   position: fixed;
   width: 100%;
-  top: 72px;
+  top: 96px;
   bottom: 72px;
 }
 
 /* line 40, ../src/screen.scss */
 h1 {
-  font-size: 4.5em;
-  line-height: 1em;
+  font-size: 3em;
+  line-height: 2em;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  text-shadow: #666666 0 1px 1px;
+  background-color: white;
   margin: 0;
   font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 48, ../src/screen.scss */
+h1 img {
+  margin-left: 1ex;
+  margin-right: 1ex;
 }

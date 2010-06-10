@@ -33,12 +33,21 @@ html,body {
   @include box-shadow(rgba(0, 0, 0, 0.8), 0, 0);
   position: fixed;
   width: 100%;
-  top: 72px;
+  top: 96px;
   bottom: 72px;
 }
 
 h1 {
-  @include adjust-font-size-to(72px);
+  @include adjust-font-size-to(48px, 4);
+  @include linear-gradient(color_stops(white, #eee));
+  @include text-shadow(#666, 0, 1px);
+  background-color: white;
   margin: 0;
   font-weight: bold;
+  text-transform: uppercase;
+  img {
+    margin-left: 1ex;
+    margin-right: 1ex;
+  }
 }
+
