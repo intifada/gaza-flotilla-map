@@ -32,6 +32,6 @@ function init() {
   map.addLayer(layer);
 
 
-  map.setCenter(new OpenLayers.LonLat(0, 0), 0);
-  map.addControl(new OpenLayers.Control.LayerSwitcher());
+  map.setCenter(new OpenLayers.LonLat(34, 32), 0);
+  map.zoomTo(9);
 };
