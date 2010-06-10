@@ -1,7 +1,6 @@
 function init() {
   var map, layer;
 
-  OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 
   map = new OpenLayers.Map('map', {
     controls: [
