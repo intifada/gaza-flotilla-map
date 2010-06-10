@@ -49,11 +49,38 @@ function init() {
       "OpenLayers WMS", "http://labs.metacarta.com/wms/vmap0?",
       {layers: 'basic'}));
 
-  layers.push(new OpenLayers.Layer.MarineTraffic( "Mavi Marmara", "data/D6FU2-20100531.xml"));
-  layers.push(new OpenLayers.Layer.MarineTraffic( "Eleftheri Mesogeios A", "data/SW6923-20100531a.xml"));
-  layers.push(new OpenLayers.Layer.MarineTraffic( "Eleftheri Mesogeios B", "data/SW6923-20100531.xml"));
-  layers.push(new OpenLayers.Layer.MarineTraffic( "Defne Y A", "data/T3SX-20100531a.xml"));
-  layers.push(new OpenLayers.Layer.MarineTraffic( "Defne Y B", "data/T3SX-20100531.xml"));
+  var layer_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+
+  var blue_style = OpenLayers.Util.extend({}, layer_style);
+  blue_style.strokeColor = "blue";
+  blue_style.fillColor = "blue";
+
+  layers.push(new OpenLayers.Layer.MarineTraffic("Mavi Marmara",
+    "data/D6FU2-20100531.xml",
+    { formatOptions: { style: blue_style } }));
+
+  var red_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  red_style.strokeColor = "red";
+  red_style.fillColor = "red";
+
+  layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios A",
+    "data/SW6923-20100531a.xml",
+    { formatOptions: { style: red_style } }));
+  layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios B",
+    "data/SW6923-20100531.xml",
+    { formatOptions: { style: red_style } }));
+
+  var green_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  green_style.strokeColor = "green";
+  green_style.fillColor = "green";
+
+  layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y A",
+    "data/T3SX-20100531a.xml",
+    { formatOptions: { style: green_style } }));
+  layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y B",
+    "data/T3SX-20100531.xml",
+    { formatOptions: { style: green_style } }));
+
   map.addLayers(layers);
 
   selectControl = new OpenLayers.Control.SelectFeature(layers,
