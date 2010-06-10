@@ -59,3 +59,11 @@ dl#legend {
     text-indent: -9999px;
   }
 }
+
+ul#controlToggle {
+  @include no-bullets;
+  @include reset-box-model;
+  position: absolute;
+  bottom: 0;
+  right: 3em;
+}
