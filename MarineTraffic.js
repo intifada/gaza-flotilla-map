@@ -273,7 +273,7 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Vector, {
      * Start the load of the RSS data. Don't do this when we first add the layer,
      * since we may not be visible at any point, and it would therefore be a waste.
      */
-    loadRSS: function() {
+    loadAISXML: function() {
         if (!this.loaded) {
             this.events.triggerEvent("loadstart");
             OpenLayers.Request.GET({
@@ -297,7 +297,7 @@ OpenLayers.Layer.MarineTraffic = OpenLayers.Class(OpenLayers.Layer.Vector, {
     moveTo:function(bounds, zoomChanged, minor) {
         OpenLayers.Layer.Vector.prototype.moveTo.apply(this, arguments);
         if(this.visibility && !this.loaded){
-            this.loadRSS();
+            this.loadAISXML();
         }
     },
 
