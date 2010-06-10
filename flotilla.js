@@ -25,7 +25,6 @@ function init() {
   onFeatureSelect = function (feature) {
       var html = '';
       selectedFeature = feature;
-      console.log(feature);
       html += 'Timestamp: ' + feature.data.timestamp + '<br />';
       html += 'Speed: ' +  feature.data.speed + '<br />';
       html += 'Course: ' + feature.data.course;
