@@ -86,7 +86,7 @@ ul#instructions {
 
 dl#source {
   @include reset-box-model;
-  @include leader(2);
+  @include leader(1);
   position: absolute;
   top: 0;
   right: 1em;
@@ -97,6 +97,7 @@ dl#source {
   dt {
     margin-right: 1em;
     text-transform: uppercase;
+    clear: left;
   }
   dd {
     @include adjust-font-size-to(12px);
