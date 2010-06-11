@@ -157,8 +157,8 @@ function init() {
   map.addControl(selectControl);
   selectControl.activate();
 
-  map.setCenter(new OpenLayers.LonLat(34, 32), 0);
-  map.zoomTo(9);
+  map.setCenter(new OpenLayers.LonLat(34, 32.5), 0);
+  map.zoomTo(8);
 
   document.getElementById('noneToggle').checked = true;
   document.getElementById('noneToggle').onclick = function () {
