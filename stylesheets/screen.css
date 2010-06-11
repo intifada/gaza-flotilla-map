@@ -433,7 +433,7 @@ ul#controlToggle {
   outline: 0;
   position: absolute;
   bottom: 0;
-  right: 3em;
+  right: 1em;
 }
 /* line 11, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 ul#controlToggle li {
