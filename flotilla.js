@@ -152,7 +152,7 @@ function init() {
   map.addLayers(layers);
 
   selectControl = new OpenLayers.Control.SelectFeature(layers,
-      {onSelect: onFeatureSelect, onUnselect: onFeatureUnselect});
+      {onSelect: onFeatureSelect, onUnselect: onFeatureUnselect, hover: true});
 
   map.addControl(selectControl);
   selectControl.activate();
