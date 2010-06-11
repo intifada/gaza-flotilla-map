@@ -441,3 +441,34 @@ ul#controlToggle li {
   list-style-type: none;
   margin-left: 0px;
 }
+
+/* line 71, ../src/screen.scss */
+dl#source {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin-top: 3em;
+  position: absolute;
+  top: 0;
+  right: 1em;
+}
+/* line 77, ../src/screen.scss */
+dl#source dt, dl#source dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: inline;
+  float: left;
+}
+/* line 81, ../src/screen.scss */
+dl#source dt {
+  margin-right: 1em;
+  text-transform: uppercase;
+}
+/* line 85, ../src/screen.scss */
+dl#source dd {
+  font-size: 0.75em;
+  line-height: 2em;
+}
