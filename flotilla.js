@@ -33,7 +33,7 @@ function init() {
   onFeatureSelect = function (feature) {
       var html = '';
       selectedFeature = feature;
-      html += 'Timestamp: ' + feature.data.timestamp + '<br />';
+      html += 'Timestamp: ' + feature.data.timestamp + ' UTC<br />';
       html += 'Speed: ' +  (parseInt(feature.data.speed, 10)) / 10 + ' knots<br />';
       html += 'Course: ' + feature.data.course + '&deg;';
 
