@@ -75,3 +75,22 @@ ul#controlToggle {
   bottom: 0;
   right: 3em;
 }
+
+dl#source {
+  @include reset-box-model;
+  @include leader(2);
+  position: absolute;
+  top: 0;
+  right: 1em;
+  dt,dd {
+    @include reset-box-model;
+    @include float-left;
+  }
+  dt {
+    margin-right: 1em;
+    text-transform: uppercase;
+  }
+  dd {
+    @include adjust-font-size-to(12px);
+  }
+}
