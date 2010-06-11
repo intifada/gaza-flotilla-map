@@ -73,7 +73,15 @@ ul#controlToggle {
   @include reset-box-model;
   position: absolute;
   bottom: 0;
-  right: 3em;
+  right: 1em;
+}
+
+ul#instructions {
+  @include reset-box-model;
+  position: absolute;
+  left: 22em;
+  width: 20em;
+  bottom: 0;
 }
 
 dl#source {

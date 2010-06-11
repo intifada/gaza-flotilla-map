@@ -443,7 +443,7 @@ ul#controlToggle {
   outline: 0;
   position: absolute;
   bottom: 0;
-  right: 3em;
+  right: 1em;
 }
 /* line 11, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 ul#controlToggle li {
@@ -453,6 +453,18 @@ ul#controlToggle li {
 }
 
 /* line 71, ../src/screen.scss */
+ul#instructions {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  left: 22em;
+  width: 20em;
+  bottom: 0;
+}
+
+/* line 79, ../src/screen.scss */
 dl#source {
   margin: 0;
   padding: 0;
@@ -463,7 +475,7 @@ dl#source {
   top: 0;
   right: 1em;
 }
-/* line 77, ../src/screen.scss */
+/* line 85, ../src/screen.scss */
 dl#source dt, dl#source dd {
   margin: 0;
   padding: 0;
@@ -472,12 +484,12 @@ dl#source dt, dl#source dd {
   display: inline;
   float: left;
 }
-/* line 81, ../src/screen.scss */
+/* line 89, ../src/screen.scss */
 dl#source dt {
   margin-right: 1em;
   text-transform: uppercase;
 }
-/* line 85, ../src/screen.scss */
+/* line 93, ../src/screen.scss */
 dl#source dd {
   font-size: 0.75em;
   line-height: 2em;
