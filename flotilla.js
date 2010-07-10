@@ -125,7 +125,7 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Mavi Marmara",
     "data/D6FU2-20100531.xml",
-    { formatOptions: { style: blue_style } }));
+    { formatOptions: { style: blue_style }, visibility: false }));
 
   var red_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
   red_style.strokeColor = "red";
@@ -133,10 +133,10 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios A",
     "data/SW6923-20100531a.xml",
-    { formatOptions: { style: red_style } }));
+    { formatOptions: { style: red_style }, visibility: false }));
   layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios B",
     "data/SW6923-20100531.xml",
-    { formatOptions: { style: red_style } }));
+    { formatOptions: { style: red_style }, visibility: false }));
 
   var green_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
   green_style.strokeColor = "green";
@@ -144,10 +144,18 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y A",
     "data/T3SX-20100531a.xml",
-    { formatOptions: { style: green_style } }));
+    { formatOptions: { style: green_style }, visibility: false }));
   layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y B",
     "data/T3SX-20100531.xml",
-    { formatOptions: { style: green_style } }));
+    { formatOptions: { style: green_style }, visibility: false }));
+
+  var orange_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  orange_style.strokeColor = "orange";
+  orange_style.fillColor = "orange";
+
+  layers.push(new OpenLayers.Layer.MarineTraffic("Amalthea",
+    "php-simple-proxy/ba-simple-proxy.php?url=http://www.marinetraffic.com/ais/gettrackxml.aspx?mmsi=214181009&mode=native",
+    { formatOptions: { style: orange_style } }));
 
   map.addLayers(layers);
 
@@ -157,8 +165,8 @@ function init() {
   map.addControl(selectControl);
   selectControl.activate();
 
-  map.setCenter(new OpenLayers.LonLat(34, 32.5), 0);
-  map.zoomTo(8);
+  map.setCenter(new OpenLayers.LonLat(30, 34), 0);
+  map.zoomTo(6);
 
   document.getElementById('noneToggle').checked = true;
   document.getElementById('noneToggle').onclick = function () {
