@@ -125,7 +125,7 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Mavi Marmara",
     "data/D6FU2-20100531.xml",
-    { formatOptions: { style: blue_style } }));
+    { formatOptions: { style: blue_style }, visibility: false }));
 
   var red_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
   red_style.strokeColor = "red";
@@ -133,10 +133,10 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios A",
     "data/SW6923-20100531a.xml",
-    { formatOptions: { style: red_style } }));
+    { formatOptions: { style: red_style }, visibility: false }));
   layers.push(new OpenLayers.Layer.MarineTraffic("Eleftheri Mesogeios B",
     "data/SW6923-20100531.xml",
-    { formatOptions: { style: red_style } }));
+    { formatOptions: { style: red_style }, visibility: false }));
 
   var green_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
   green_style.strokeColor = "green";
@@ -144,10 +144,10 @@ function init() {
 
   layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y A",
     "data/T3SX-20100531a.xml",
-    { formatOptions: { style: green_style } }));
+    { formatOptions: { style: green_style }, visibility: false }));
   layers.push(new OpenLayers.Layer.MarineTraffic("Defne Y B",
     "data/T3SX-20100531.xml",
-    { formatOptions: { style: green_style } }));
+    { formatOptions: { style: green_style }, visibility: false }));
 
   map.addLayers(layers);
 
