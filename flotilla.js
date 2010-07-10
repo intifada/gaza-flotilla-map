@@ -149,6 +149,14 @@ function init() {
     "data/T3SX-20100531.xml",
     { formatOptions: { style: green_style }, visibility: false }));
 
+  var orange_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  orange_style.strokeColor = "orange";
+  orange_style.fillColor = "orange";
+
+  layers.push(new OpenLayers.Layer.MarineTraffic("Amalthea",
+    "php-simple-proxy/ba-simple-proxy.php?url=http://www.marinetraffic.com/ais/gettrackxml.aspx?mmsi=214181009&mode=native",
+    { formatOptions: { style: orange_style } }));
+
   map.addLayers(layers);
 
   selectControl = new OpenLayers.Control.SelectFeature(layers,
@@ -157,8 +165,8 @@ function init() {
   map.addControl(selectControl);
   selectControl.activate();
 
-  map.setCenter(new OpenLayers.LonLat(34, 32.5), 0);
-  map.zoomTo(8);
+  map.setCenter(new OpenLayers.LonLat(30, 34), 0);
+  map.zoomTo(6);
 
   document.getElementById('noneToggle').checked = true;
   document.getElementById('noneToggle').onclick = function () {
