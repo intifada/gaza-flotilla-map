@@ -2,7 +2,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" /> */
 /* Reset --------------------------------------------------------------*/
-/* line 14, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 14, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,48 +22,48 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 19, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 19, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 21, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 21, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 23, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 23, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 25, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: "" "";
 }
-/* line 96, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 96, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-/* line 27, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 27, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
 /* HTML5 Reset --------------------------------------------------------------*/
-/* line 107, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 107, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 section, article, aside, header, footer, nav, dialog, figure {
   display: block;
 }
@@ -434,7 +434,7 @@ dl#legend dt {
   text-indent: -9999px;
 }
 
-/* line 63, ../src/screen.scss */
+/* line 71, ../src/screen.scss */
 ul#controlToggle {
   list-style: none;
   margin: 0;
@@ -445,14 +445,14 @@ ul#controlToggle {
   bottom: 0;
   right: 1em;
 }
-/* line 11, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 ul#controlToggle li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0px;
 }
 
-/* line 71, ../src/screen.scss */
+/* line 79, ../src/screen.scss */
 ul#instructions {
   margin: 0;
   padding: 0;
@@ -464,7 +464,7 @@ ul#instructions {
   bottom: 0;
 }
 
-/* line 79, ../src/screen.scss */
+/* line 87, ../src/screen.scss */
 dl#source {
   margin: 0;
   padding: 0;
@@ -475,7 +475,7 @@ dl#source {
   top: 0;
   right: 1em;
 }
-/* line 85, ../src/screen.scss */
+/* line 93, ../src/screen.scss */
 dl#source dt, dl#source dd {
   margin: 0;
   padding: 0;
@@ -484,14 +484,29 @@ dl#source dt, dl#source dd {
   display: inline;
   float: left;
 }
-/* line 89, ../src/screen.scss */
+/* line 97, ../src/screen.scss */
 dl#source dt {
   margin-right: 1em;
   text-transform: uppercase;
   clear: left;
 }
-/* line 94, ../src/screen.scss */
+/* line 102, ../src/screen.scss */
 dl#source dd {
   font-size: 0.75em;
   line-height: 2em;
+}
+
+/* line 107, ../src/screen.scss */
+#amalthea {
+  font-size: 0.75em;
+  line-height: 1.5em;
+  -moz-box-shadow: #333333 0 0 5px;
+  -webkit-box-shadow: #333333 0 0 5px;
+  -o-box-shadow: #333333 0 0 5px;
+  box-shadow: #333333 0 0 5px;
+}
+
+/* line 112, ../src/screen.scss */
+.amalthea {
+  background-color: orange;
 }

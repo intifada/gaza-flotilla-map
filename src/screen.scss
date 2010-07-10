@@ -103,3 +103,12 @@ dl#source {
     @include adjust-font-size-to(12px);
   }
 }
+
+#amalthea {
+  @include adjust-font-size-to(12px, .75);
+  @include box-shadow(#333, 0, 0)
+}
+
+.amalthea {
+  background-color: orange;
+}
