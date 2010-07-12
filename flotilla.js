@@ -165,8 +165,8 @@ function init() {
   map.addControl(selectControl);
   selectControl.activate();
 
-  map.setCenter(new OpenLayers.LonLat(30, 34), 0);
-  map.zoomTo(6);
+  map.setCenter(new OpenLayers.LonLat(31, 32), 0);
+  map.zoomTo(7);
 
   var popup = new OpenLayers.Popup(
     'amalthea',
