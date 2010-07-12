@@ -165,13 +165,13 @@ function init() {
   map.addControl(selectControl);
   selectControl.activate();
 
-  map.setCenter(new OpenLayers.LonLat(31, 32), 0);
+  map.setCenter(new OpenLayers.LonLat(31, 32.5), 0);
   map.zoomTo(7);
 
   var popup = new OpenLayers.Popup(
     'amalthea',
-    new OpenLayers.LonLat(31.25,34.25),
-    new OpenLayers.Size(400,160),
+    new OpenLayers.LonLat(30.25,34.5),
+    new OpenLayers.Size(390,144),
     '<span class="amalthea">Amalthea</span>, a Moldova-registered cargo ship set sail from Lavrio, Greece on Saturday July 10 carrying 2,000 tons of humanitarian aid bound for the Israeli-occupied Gaza Strip. The ship is sponsored by a charity headed by the son of Libyan leader Muammar al-Qadhafi. Israel has pressured Greece and Moldova to redirect the ship. Organizers insist the ship will head for Gaza, <a href="http://news.bbc.co.uk/2/hi/middle_east/10584525.stm">according to the BBC</a>. It is unclear whether Amalthea will attempt to break the illegal Israeli-imposed naval blockade on Gaza or dock instead in Egypt\'s port of El-Arish.'
   );
   map.addPopup(popup);
